@@ -1,10 +1,6 @@
 <?php
 include("top.html");
-include("common.php");
-
-function splitLine(){
-
-}
+require_once('common.php');
 
 if(is_get_request()){
     $name = "";
@@ -16,20 +12,43 @@ if(is_get_request()){
 $people = [];
 
 //open file
-$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+$myfile = fopen("singles.txt", "r") or die("Unable to open file!");
 ?>
 
 <h2>Matches For <?=$name?> </h2>
-//Read file one by one
 <?php
+//Find actual user
+while(!feof($myfile)){
+    $person = explode(",", fgets($myfile));
+    if(trim($person['0']) === trim($name)){
+      $user = $person;
+    }
+}
+fclose($myfile);
+//open file
+$myfile = fopen("singles.txt", "r") or die("Unable to open file!");
+$count = 0;
+//Read file one by one
 while(!feof($myfile)) {
  $people = explode(",", fgets($myfile));
+ if( (trim($people['0']) !== trim($name)) && is_match($user, $people)){
+ $count++;
 ?>
 <div class="match">
-<img src="#"/>
-<p> <=$people['0']> </p>
-
+<img src="user.jpg"/>
+<p> <?=$people['0']?> </p>
+<ul>
+<ol><strong>gender:</strong> <?=$people['1']?></ol>
+<ol><strong>age:</strong> <?=$people['2']?></ol>
+<ol><str0ng>type:</strong> <?=$people['3']?></ol>
+<ol><strong>OS:</strong> <?=$people['4']?></ol>
+</ul>
 </div>
-<?php } fclose($myfile); ?>
+<?php }}
+fclose($myfile);
+if($count === 0){ ?>
+    <p>No match is found</p>
+<?php }
+?>
 
 <?php include("bottom.html"); ?>
