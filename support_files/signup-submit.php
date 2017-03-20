@@ -3,7 +3,7 @@ include("top.html");
 require_once('common.php');
 
 $errors = [];
-$type_array = array("ESTJ", "ISTJ", "ENTJ", "INTJ", "ESTP" , "ISTP", "ENTP", "INTP"
+$type_array = array("ESTJ", "ISTJ", "ENTJ", "INTJ", "ESTP" , "ISTP", "ENTP", "INTP",
                         "ESFJ", "ISFJ", "ENFJ", "INFJ", "ESFP", "ISFP", "ENFP", "INFP");
 if(is_post_request()){
     $name = "";
@@ -63,7 +63,7 @@ if(is_post_request()){
     }
     //Verify that name contain only alpahbetic characters with first letters of each word capitalized
     if(!is_alphabetic($name)){
-        $errors[] = "Name must be alphabetic with first letter of each word capitalized"
+        $errors[] = "Name must be alphabetic with first letter of each word capitalized";
     }
     if(!first_cap($name)){
         $errors[] = "First letter of each word in name must be capitalized";
@@ -86,7 +86,30 @@ if(is_post_request()){
         //open file for writing
         $file = 'singles.txt"';
         file_put_contents($file, $current, FILE_APPEND);
+?>
+
+<p> <strong> Thank you! </strong> </p>
+
+<p> Welcome to NerdLuv, <?= $name ?>! </p>
+
+<p> Now <a href = "matches.php"> login to see your matches!</a></p>
+
+<?php
     }
 }
+?>
 
+<p> <strong> Please fix the following errors </strong> </p>
+
+<p> Errors:
+    <ul>
+    <?php
+    foreach($errors as $error){
+    ?>
+        <li> <?= $error ?> </li>
+    <?php } ?>
+    </ul>
+</p>
+
+<p> Back to <a href = "signup.php"> signup</a></p>
 <?php include("bottom.html"); ?>
