@@ -35,8 +35,8 @@ while(!feof($myfile)) {
  $count++;
 ?>
 <div class="match">
-    <img src="user.jpg"/>
-    <p> <?=$people['0']?> </p>
+    <p><img src="user.jpg"/>
+    	<?=$people['0']?> </p>
     <ul>
     <ol><strong>gender:</strong> <?=$people['1']?></ol>
     <ol><strong>age:</strong> <?=$people['2']?></ol>
