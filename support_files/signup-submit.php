@@ -93,7 +93,7 @@ if(is_post_request()){
         $current = "\n";
         $current .= implode(",", $person);
         //open file for writing
-        $file = 'singles.txt"';
+        $file = 'singles.txt';
         file_put_contents($file, $current, FILE_APPEND);
 ?>
 
