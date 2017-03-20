@@ -29,7 +29,7 @@ function is_digit($input=""){
 
 //checks that every letter in word is alphabetic
 function is_alphabetic($input=""){
-    return ctype_alpha($input);
+    return ctype_alpha(str_replace(' ', '', $input));
 }
 
 //checks that first letter of each word is capitalized
@@ -46,7 +46,7 @@ function first_cap($input = ""){
 
 //Checks that $type is a member of $type_array
 function is_type($type, $type_array){
-    foreach($type_arrayas $value){
+    foreach($type_array as $value){
         if(trim($value) === trim($type)){
             return true;
         }

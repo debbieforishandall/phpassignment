@@ -40,7 +40,7 @@ while(!feof($myfile)) {
 <ul>
 <ol><strong>gender:</strong> <?=$people['1']?></ol>
 <ol><strong>age:</strong> <?=$people['2']?></ol>
-<ol><str0ng>type:</strong> <?=$people['3']?></ol>
+<ol><strong>type:</strong> <?=$people['3']?></ol>
 <ol><strong>OS:</strong> <?=$people['4']?></ol>
 </ul>
 </div>

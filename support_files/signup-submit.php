@@ -80,9 +80,18 @@ if(is_post_request()){
         $errors[] = "Seeking max age must be digit";
     }
 
+    if(trim($favOS) === "windows"){
+        $favOS = "Windows";
+    } else if(trim($favOS) === "mac"){
+        $favOS = "Mac OS X";
+    } else {
+        $favOS = "Linux";
+    }
+
     if(empty($errors)){
         $person = array($name, $gender, $age, $personality_type, $favOS, $min_age, $max_age);
-        $current = implode(",", $person);
+        $current = "\n";
+        $current .= implode(",", $person);
         //open file for writing
         $file = 'singles.txt"';
         file_put_contents($file, $current, FILE_APPEND);
@@ -95,8 +104,7 @@ if(is_post_request()){
 <p> Now <a href = "matches.php"> login to see your matches!</a></p>
 
 <?php
-    }
-}
+    } else {
 ?>
 
 <p> <strong> Please fix the following errors </strong> </p>
@@ -110,6 +118,10 @@ if(is_post_request()){
     <?php } ?>
     </ul>
 </p>
-
 <p> Back to <a href = "signup.php"> signup</a></p>
+<?php
+    }
+}
+?>
+
 <?php include("bottom.html"); ?>
