@@ -1,6 +1,7 @@
 <?php include("top.html"); ?>
 
 <form action="signup-submit.php" method="POST">
+    <fieldset>
     <legend>New User SignUp:</legend><br/>
     <strong>Name: </strong>
     <input type="text" name="name" maxlength="16"><br/>
@@ -24,10 +25,11 @@
     <br/><br/>
     <strong>Seeking age: </strong>
     <input type="text" name="min_age" maxlength="2" size="6" placeholder="min">
-    <strong> to </strong>
+    to
     <input type="text" name="max_age" maxlength="2" size="6" placeholder="max">
     <br/><br/>
     <input type="submit" name="Sign Up">
+    </fieldset>
 </form>
 
 <?php include("bottom.html"); ?>
