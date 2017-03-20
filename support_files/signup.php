@@ -12,7 +12,7 @@
     <input type="text" name="age" maxlength="2" size="6">
     <br/><br/>
     <strong>Personality type: </strong>
-    <input type="text" name="age" maxlength="4" size="6">
+    <input type="text" name="type" maxlength="4" size="6">
     <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a>
     <br/><br/>
     <strong>Favorite OS: </strong>

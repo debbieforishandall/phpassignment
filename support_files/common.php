@@ -17,6 +17,42 @@ function sanitize_input($string=""){
     return $string;
 }
 
+//checks that stringis blank
+function is_blank($string){
+    return empty($string);
+}
+
+//checks that input is digit
+function is_digit($input=""){
+    return ctype_digit(strval($input));
+}
+
+//checks that every letter in word is alphabetic
+function is_alphabetic($input=""){
+    return ctype_alpha($input);
+}
+
+//checks that first letter of each word is capitalized
+function first_cap($input = ""){
+    $words = explode(" ", $input);
+    $i = 0;
+    foreach($words as $value){
+        if(!ctype_upper($value[$i])){
+            return false;
+        }
+    }
+    return true;
+}
+
+//Checks that $type is a member of $type_array
+function is_type($type, $type_array){
+    foreach($type_arrayas $value){
+        if(trim($value) === trim($type)){
+            return true;
+        }
+    }
+    return false;
+}
 function gender_match($gender1, $gender2){
 //check if two genders are opposite
     if(trim($gender1) === 'F'){
