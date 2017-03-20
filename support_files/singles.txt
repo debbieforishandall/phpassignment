@@ -53,3 +53,5 @@ Zelda,F,59,ESTP,Windows,40,62
 Random Nerd,female,24,ESTJ,Windows,25,36
 Random Nerd,female,24,ESTJ,Windows,25,36
 Another Random N,male,24,INTP,Mac OS X,25,36
+Another Random N,male,24,INTP,Mac OS X,25,36
+Rand Not,female,76,ISTJ,Linux,76,77
